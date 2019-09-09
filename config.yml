@@ -1,0 +1,133 @@
+##########################################################
+#                   TimeOverride Config                  #
+##########################################################
+
+Time_Cycle_Length: 86400
+#This marks the total number of time units in the day/night cycle
+#In this example, that would be 86400 seconds (24 hrs) in a day/night cycle
+
+Time_Units_Per_Minute: 60
+#This marks the amount of time units (seconds) that pass in a minute.
+
+Minimum_Minute_Digits: 2
+#This forces minutes to be a minimum of 2 digits long. In our example numbers,
+#this would result in minute 9 being :09 but minute 10 would stay :10
+
+Time_Units_Per_Hour: 3600
+#This marks the amount of time units (seconds) that pass in an hour.
+#The minutes and hours should make sense given the total Time_Cycle_Length.
+#If they don't add up logically, the day will end seemingly at a weird
+#time.
+
+Server_Ticks_Per_Time_Unit: 20
+#Servers run at 20 ticks per second, so for this example I want
+#it to mimick real life time so I want a second to pass every
+#20 server ticks.
+
+Avoid_Military_Time: false
+#Enable this if you'd like the time cycle to repeat half the total
+#time units twice instead of all the time units once. This is equivalent
+#to there being an AM and PM
+#This will add new available syntax to the messages IF ENABLED:
+#Syntax:
+#  %timeoverride_ampm% -> Gives if currently in AM or PM.
+
+Daytime_Start: 0
+#This marks the time unit of the day/night cycle where day BEGINS.
+#The example represents 12:00 AM, or 12 in the morning
+
+Nighttime_Start: 43200
+#This marks the time unit of the day/night cycle where night BEGINS.
+#The example represents 12:00 PM, or 12 noon
+
+Update_Ticks: 1
+#This is the amount of ticks in between each update calculation which
+#changes the time of day and updates the bossbar and all information
+#Lower numbers SHOULDN'T lag anything, but if they do feel free to
+#raise this. 1 represents 1/20th of a second, 20 represents 1 second
+#between updates and so on.
+
+Months:
+  January:
+    Days: 31
+  February:
+    Days: 28
+  March:
+    Days: 31
+  April:
+    Days: 30
+  May:
+    Days: 31
+  June:
+    Days: 30
+  July:
+    Days: 31
+  August:
+    Days: 31
+  September:
+    Days: 30
+  October:
+    Days: 31
+  November:
+    Days: 30
+  December:
+    Days: 31
+
+Bossbar_Text: "%timeoverride_hour%:%timeoverride_minute% %timeoverride_month% %timeoverride_day%, %timeoverride_year%"
+#Syntax:
+#  %timeoverride_year% -> The current year
+#  %timeoverride_month% -> The current month
+#  %timeoverride_day% -> The current day
+#  %timeoverride_hour% -> The current hour
+#  %timeoverride_minute% -> The current minute
+#  %timeoverride_second% -> The current second
+
+Time_Command_Text: "It is currently %timeoverride_hour%:%timeoverride_minute%."
+#This is the text that will show when a player types the time command. Same
+#syntax as above.
+
+Time_Command: "/time"
+#This is the command that the player will type to see what time it is.
+#Include the '/' in the beginning.
+
+Year_Offset: 2019
+#This will shift the beginning of the server from year 0 to whatever
+#Type "/timeoverride getoffset" to get the offsets which will make your
+#server run according to real life time
+
+Month_Offset: 4
+#This will shift the beginning of the server from January for example
+#to april
+#Type "/timeoverride getoffset" to get the offsets which will make your
+#server run according to real life time
+
+Day_Offset: 12
+#This will shift the beginning of the server from April 1st for example
+#to april 12th
+#Type "/timeoverride getoffset" to get the offsets which will make your
+#server run according to real life time
+
+Hour_Offset: 1
+#This will shift the beginning server hour. This hour example will make
+#it be 1:00
+#Type "/timeoverride getoffset" to get the offsets which will make your
+#server run according to real life time
+
+Minute_Offset: 30
+#This will shift the beginning server minutes. This now makes the server's
+#origin time be 1:30
+#Type "/timeoverride getoffset" to get the offsets which will make your
+#server run according to real life time
+
+Second_Offset: 30
+#This will shift the beginning server seconds (time units). Minutes are calculated
+#from the seconds. This example would now make the offset 1:30:30.
+#Type "/timeoverride getoffset" to get the offsets which will make your
+#server run according to real life time
+
+##########################################################
+#                        Version                         #
+##########################################################
+
+VERSION: 1
+#Do not touch this. No touchy.

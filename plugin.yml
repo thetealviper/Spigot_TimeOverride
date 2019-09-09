@@ -1,0 +1,8 @@
+name: "TimeOverride"
+author: TheTealViper
+version: "1.14.4.a.1"
+api-version: 1.13
+description: "Custom Time Baby"
+main: me.TheTealViper.timeoverride.TimeOverride
+commands:
+  timeoverride:
